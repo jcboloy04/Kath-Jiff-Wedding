@@ -8,6 +8,32 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Makes the scrollbar thinner */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: white; /* Matches your theme */
+  border-radius: 10px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: #31496a; /* Dark blue to match the borderline */
+  border-radius: 10px;
+}
+
+/* Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1f3550; /* Slightly darker on hover */
+}
+
 /* Navbar Styling */
 .navbar-custom {
   background-color: #f7e7ce;
@@ -25,7 +51,7 @@ body {
 
 .navbar-brand {
   font-family: "Playfair Display", serif;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 200; /* Lighter than 300 */
   color: #800020 !important;
   padding: 15px 20px;
@@ -100,7 +126,11 @@ body {
 
 /* Home Section */
 .home-section {
-  background-color: #5a5a5a;
+  background-image: url("image/wedding1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 90%;
   height: 100vh;
   padding-top: 10px; /* Adjust for fixed navbar */
 }
