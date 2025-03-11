@@ -12,7 +12,6 @@
     />
 
     <!-- Google Fonts -->
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&family=Dancing+Script:wght@400;600&display=swap"
       rel="stylesheet"
@@ -31,7 +30,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-custom navbar-default">
+    <nav class="navbar navbar-custom navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button
@@ -44,13 +43,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">J & K</a>
+          <a class="navbar-brand" href="#">J &amp; K</a>
         </div>
 
         <div class="collapse navbar-collapse" id="wedding-navbar">
           <ul class="nav navbar-nav navbar-center">
             <li><a href="#home">Home</a></li>
-            <li><a href="#our-story">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#photos">Entourage</a></li>
             <li><a href="#qa">RSVP</a></li>
           </ul>
@@ -63,26 +62,49 @@
       <div class="home-content">
         <h1>Jiff <span class="small-and">and</span> Kath</h1>
         <p class="wedding-date">5 • 24 • 2025</p>
-        <p class="wedding-verse">Genesis 1:1</p>
+        <p class="wedding-verse"></p>
       </div>
     </section>
 
     <!-- Borderline -->
     <div class="borderline"></div>
 
-    <!-- Second Section -->
-    <section id="section2" class="section second-section">
-      <div class="content">
-        <h2>Our Story</h2>
-        <p>How we met and our journey together.</p>
+    <!-- About Section adapted as a Wedding Invitation -->
+    <section id="about" class="section about-section">
+      <div class="container invitation">
+        <div class="invitation-top">
+          <!-- Left Column: Date -->
+          <div class="invitation-date">
+            <span>MAY 24, 2025</span>
+          </div>
+          <!-- Right Column: Location -->
+          <div class="invitation-location">
+            <span>BAGUIO CITY, BENGUET</span>
+          </div>
+        </div>
+        <div class="invitation-details">
+          <br /><br />
+          <h2>WEDDING DETAILS</h2>
+          <br />
+          <p>SATURDAY, MAY 24, 2025</p>
+          <br />
+          <p>3:00 PM – 8:00 PM</p>
+
+          <br />
+          <p>
+            Hotel Supreme<br />
+            Convention Plaza, Baguio City
+          </p>
+          <p><small>Registration starts at 2:00 PM</small></p>
+        </div>
       </div>
     </section>
 
     <!-- Borderline -->
     <div class="borderline"></div>
 
-    <!-- Third Section -->
-    <section id="section3" class="section third-section">
+    <!-- Photos Section -->
+    <section id="photos" class="section third-section">
       <div class="content">
         <h2>Photos</h2>
         <p>Memorable moments from our journey.</p>
@@ -91,11 +113,24 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>© 2025 Jiff & Kath Wedding. All Rights Reserved.</p>
+      <p>© 2025 Jiff &amp; Kath Wedding. All Rights Reserved.</p>
     </footer>
 
     <!-- jQuery and Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for Scroll Effect -->
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 50) {
+            $(".navbar-fixed-top").addClass("scrolled");
+          } else {
+            $(".navbar-fixed-top").removeClass("scrolled");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

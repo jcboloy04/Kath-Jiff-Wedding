@@ -5,41 +5,50 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+}
+
+body {
   font-family: "Inter", sans-serif;
 }
 
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Webkit Browsers (Chrome, Edge, Safari) */
+/* Scrollbar Styling (Webkit Browsers) */
 ::-webkit-scrollbar {
-  width: 8px; /* Makes the scrollbar thinner */
+  width: 8px;
 }
 
-/* Scrollbar Track */
 ::-webkit-scrollbar-track {
-  background: white; /* Matches your theme */
+  background: white;
   border-radius: 10px;
 }
 
-/* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-  background: #31496a; /* Dark blue to match the borderline */
+  background: #31496a;
   border-radius: 10px;
 }
 
-/* Scrollbar Handle on Hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #1f3550; /* Slightly darker on hover */
+  background: #1f3550;
 }
 
 /* Navbar Styling */
 .navbar-custom {
-  background-color: #f7e7ce;
-  border-bottom: 2px solid transparent;
+  background: linear-gradient(
+    to bottom,
+    rgba(128, 128, 128, 0.9),
+    transparent
+  ) !important;
+  border: none;
   padding: 10px 20px;
   margin-bottom: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-fixed-top {
@@ -52,14 +61,13 @@ html {
 .navbar-brand {
   font-family: "Playfair Display", serif;
   font-size: 30px;
-  font-weight: 200; /* Lighter than 300 */
+  font-weight: 200;
   color: #800020 !important;
   padding: 15px 20px;
   letter-spacing: 1px;
   text-transform: capitalize;
 }
 
-/* Navbar Centering */
 .navbar-collapse {
   text-align: center;
 }
@@ -76,7 +84,6 @@ html {
   display: inline-block;
 }
 
-/* Navbar Links */
 .navbar-nav > li > a {
   font-family: "Lora", serif;
   font-size: 18px;
@@ -85,24 +92,30 @@ html {
   text-decoration: none;
   padding: 15px 20px;
   position: relative;
-  transition: color 0.3s ease-in-out; /* Smooth text color transition */
+  transition: color 0.3s ease-in-out;
+  background: transparent;
 }
 
-/* Hover Effect: Underline Animation */
 .navbar-nav > li > a::after {
   content: "";
   display: block;
   height: 2px;
   width: 0;
-  background: #800020; /* Blue indicator line */
+  background: #31496a;
   position: absolute;
   bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  transition: width 0.3s ease-in-out; /* Smooth expand animation */
+  transition: width 0.3s ease-in-out;
 }
 
-/* On Hover: Show the Line */
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  background: transparent !important;
+  outline: none;
+  box-shadow: none;
+}
+
 .navbar-nav > li > a:hover::after {
   width: 80%;
 }
@@ -111,7 +124,7 @@ html {
   border: none;
 }
 
-/* Section Base Style */
+/* Section Base Styles */
 .section {
   width: 100%;
   height: 100vh;
@@ -130,12 +143,11 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 90%;
+  opacity: 0.9;
   height: 100vh;
   padding-top: 10px; /* Adjust for fixed navbar */
 }
 
-/* Home Section Content (Great Vibes Font) */
 .home-content h1 {
   font-family: "Great Vibes", cursive;
   font-size: 96px;
@@ -146,7 +158,7 @@ html {
 }
 
 .small-and {
-  font-size: 34px; /* Smaller than the rest */
+  font-size: 34px;
   font-weight: 400;
   color: white;
 }
@@ -159,7 +171,6 @@ html {
   color: white;
 }
 
-/* Bible Verse Font (Frunchy) */
 .wedding-verse {
   font-family: "Dancing Script", cursive;
   font-size: 30px;
@@ -171,26 +182,77 @@ html {
 /* Borderline */
 .borderline {
   width: 100%;
-  height: 35px;
+  height: 15px;
   background-color: #31496a;
 }
 
-/* Second Section */
-.second-section {
+/* About Section – Wedding Invitation Style */
+.about-section {
   background-color: #f7e7ce;
   color: #333;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.second-section .content h2 {
-  font-family: "Playfair Display", serif;
+.invitation {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.invitation-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.invitation-date,
+.invitation-location {
+  width: 45%;
+}
+
+/* Add a vertical divider on the right side of the date column */
+.invitation-date {
+  border-right: 1px solid #31496a; /* Divider line (color & thickness can be adjusted) */
+  padding-right: 50px; /* Space between the text and the divider */
+  margin-left: 48px;
+}
+
+.invitation-location {
+  padding-left: 5px;
+}
+
+.invitation-date span,
+.invitation-location span {
+  font-family: "Lora", serif;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.invitation-details h2 {
+  font-family: "Lora", serif;
   font-size: 36px;
+  margin-bottom: 15px;
 }
 
-.second-section .content p {
-  font-size: 18px;
+.invitation-details p {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  margin: 5px 0;
 }
 
-/* Third Section */
+.invitation-details p small {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Photos Section */
 .third-section {
   background-color: #d9d9d9;
   color: #333;
@@ -215,7 +277,7 @@ html {
   font-family: "Lora", serif;
 }
 
-/* Mobile Responsiveness */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .home-content h1 {
     font-size: 42px;
@@ -243,7 +305,17 @@ html {
   }
 
   .section {
-    height: 100vh;
+    height: auto;
     padding: 40px 10px;
+  }
+
+  .invitation-top {
+    flex-direction: column;
+  }
+
+  .invitation-date,
+  .invitation-location {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
