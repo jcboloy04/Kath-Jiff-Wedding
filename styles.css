@@ -127,7 +127,7 @@ html {
 /* Section Base Styles */
 .section {
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,7 +188,7 @@ html {
 
 /* About Section – Wedding Invitation Style */
 .about-section {
-  background-color: #f7e7ce;
+  background-color: #f0f0f0;
   color: #333;
   padding: 40px 0;
   display: flex;
@@ -199,46 +199,114 @@ html {
 
 .invitation {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .invitation-top {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.entourage-top {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.invitation-date,
-.invitation-location {
+.grooms-parents,
+.brides-parents {
+  width: 100%;
+}
+
+.principal-sponsors1,
+.principal-sponsors2 {
   width: 45%;
 }
 
+.invitation-top p {
+  font-family: "Times New Roman";
+  font-size: 20px;
+  color: #000000;
+}
+
+.officiating-minister p {
+  font-family: "Times New Roman";
+  font-size: 20px;
+  color: #000000;
+}
+
+.entourage-top p{
+  font-family: "Times New Roman";
+  font-size: 20px;
+  color: #000000;
+}
+
 /* Add a vertical divider on the right side of the date column */
-.invitation-date {
-  border-right: 1px solid #31496a; /* Divider line (color & thickness can be adjusted) */
-  padding-right: 50px; /* Space between the text and the divider */
+.grooms-parents {
+  
+  padding-right: 200px; /* Space between the text and the divider */
   margin-left: 48px;
 }
 
-.invitation-location {
+.brides-parents {
   padding-left: 5px;
 }
 
-.invitation-date span,
-.invitation-location span {
+.principal-sponsors1 {
+  border-right: 2px solid #31496a; /* Divider line (color & thickness can be adjusted) */
+  padding-right: 0px; /* Space between the text and the divider */
+  margin-left: 48px;
+}
+
+.principal-sponsors2 {
+  padding-left: 5px;
+}
+
+.grooms-parents span,
+.brides-parents span {
+  color: #9c2020;
   font-family: "Lora", serif;
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 100;
   letter-spacing: 2px;
-  text-transform: uppercase;
+}
+
+.principal-sponsors1 span,
+.principal-sponsors2 span {
+  color: #9c2020;
+  font-family: "Lora", serif;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.entourage p {
+  font-family: "Times New Roman";
+  font-size: 20px;
+  color: #000000;
+}
+
+.entourage-titles {
+  color: #9c2020;
+  font-family: "Lora", serif;
+  font-size: 30px;
+  font-weight: 100;
 }
 
 .invitation-details h2 {
   font-family: "Lora", serif;
   font-size: 36px;
   margin-bottom: 15px;
+}
+
+.the-details h2 {
+  font-family: "Times New Roman";
+  font-size: 100px;
+  color: #9c2020;
+  font-weight: bold;
 }
 
 .invitation-details p {
@@ -313,8 +381,18 @@ html {
     flex-direction: column;
   }
 
-  .invitation-date,
-  .invitation-location {
+  .entourage-top {
+    flex-direction: column;
+  }
+
+  .grooms-parents,
+  .brides-parents {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .principal-sponsors1,
+  .principal-sponsors2{
     width: 100%;
     margin-bottom: 10px;
   }
